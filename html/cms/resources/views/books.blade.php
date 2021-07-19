@@ -1,6 +1,6 @@
 <!-- resources/views/books.blade.php -->
-@extends('layout.app')
-@@section('content')
+@extends('layouts.app')
+@section('content')
   <!-- Bootstrapの提携コード -->
   <div class="card-body">
     <div class="card-title">
@@ -8,7 +8,7 @@
     </div>
 
     <!-- バリデーションエラーの表示に使用 -->
-    @@include('common.errors')
+    @include('common.errors')
     <!-- バリデーションエラーの表示に使用 -->
 
     <!-- 本登録フォーム -->
@@ -33,5 +33,5 @@
     </form>
   </div>
   <!-- Book：すでに登録されている本のリスト -->
-  
+
 @endsection
