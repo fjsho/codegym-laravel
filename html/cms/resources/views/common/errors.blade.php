@@ -5,7 +5,7 @@
     <div><strong>入力した文字を修正してください</strong></div>
     <div>
       <ul>
-        @foreach ($erros -> all() as $error)
+        @foreach ($errors -> all() as $error)
         <li>{{$error}}</li>
         @endforeach
       </ul>
