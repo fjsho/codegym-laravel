@@ -70,4 +70,15 @@ class BooksController extends Controller
             'books' => $books
         ]);    
     }
+
+    //更新画面
+    public function booksedit(Book $books){
+        return view('booksedit',['book'=>$books]);
+    }
+
+    //削除処理
+    public function delete(Book $book){
+        $book->delete();
+        return redirect('/');
+    }
 }

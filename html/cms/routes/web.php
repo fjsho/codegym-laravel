@@ -28,18 +28,13 @@ Route::post('/books', 'BooksController@store');
 /**
 * 本を削除 
 */
-Route::delete('/book/{book}', function (Book $book) {
-    $book->delete();
-    return redirect('/');
-});
+Route::delete('/book/{book}', 'BooksController@delete');
 
 /**
 * 本を更新
 */
 //更新画面
-Route::post('/booksedit/{books}', function (Book $books) {
-    return view('booksedit',['book'=>$books]);
-});
+Route::post('/booksedit/{books}', 'BooksController@booksedit');
 //更新処理
 Route::post('/books/update', 'BooksController@update');
 
