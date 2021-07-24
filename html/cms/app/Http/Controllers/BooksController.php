@@ -62,4 +62,12 @@ class BooksController extends Controller
         $books->save();
         return redirect('/');
     }
+
+    //ダッシュボード
+    public function dashboard(){
+        $books = Book::orderBy('created_at', 'asc')->get();
+        return view('books', [
+            'books' => $books
+        ]);    
+    }
 }
