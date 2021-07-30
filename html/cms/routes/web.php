@@ -12,20 +12,31 @@
 */
 
 use App\Book;
+use Dotenv\Validator;
 use Illuminate\Http\Request;
 
 /**
 * 本の一覧表示(books.blade.php)
 */
 Route::get('/', function () {
-    return view('welcome');
+    return view('books');
 });
 
 /**
 * 本を追加 
 */
 Route::post('/books', function (Request $request) {
-    //
+    //バリデーション
+    $validator = Validator::make($request->all(),[
+        'item_name' => 'required|max:255'
+    ]);
+    //バリデーション：エラー
+    if($validator->fails()) {
+        return redirect('/')
+            ->withInput()
+            ->withErrors($validator);
+    }
+    
 });
 
 /**
