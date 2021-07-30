@@ -12,7 +12,6 @@
 */
 
 use App\Book;
-use Dotenv\Validator;
 use Illuminate\Http\Request;
 
 /**
